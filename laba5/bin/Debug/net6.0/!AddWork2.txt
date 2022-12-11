@@ -1,0 +1,12 @@
+test.ru
+www.test.ru
+http://sdsss.com
+https://www.sdsss.com
+https://www.123sd.fu1
+www.test.tess.dom.com
+ftp://as.sa.ss.dd.ru
+www.sd.sd.sd.sd.sd
+https://_hello.ru
+htttps://asd.sdsd.sd.sd.sd.sd.sd.sd.ru
+ftp://sd.sd.sd.sd.sd.sd.ru
+ssh://ss.ru

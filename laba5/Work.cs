@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace AllStaff.Lab5;
+namespace AllStaff.laba5;
 /// <summary>
 /// Абстрактный класс
 /// </summary>
@@ -75,6 +75,18 @@ public class Work4a : Work
             {
                 Console.WriteLine("Не найдено");
             }
+        }
+    }
+    public override void PrintFromConsole(string text)
+    {
+        Match match = Regex.Match(text);
+        if (match.Success)
+        {
+            Console.WriteLine($"{match.Groups["street"]} {match.Groups["house"]}");
+        }
+        else
+        {
+            Console.WriteLine("Не найдено");
         }
     }
 }
