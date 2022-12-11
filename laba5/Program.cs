@@ -12,6 +12,10 @@ public class Program
 
         //work.PrintFromFile();
 
+        Work work = new AddWork2();
+        //work.PrintFromFile();
+        work.PrintFromConsole(Console.ReadLine());
+
         Work4a work4a = new();
         //work4a.PrintFromFile();
         work4a.PrintFromConsole(Console.ReadLine());
