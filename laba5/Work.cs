@@ -67,6 +67,7 @@ public class Work4a : Work
         foreach (string line in Lines)
         {
             Match match = Regex.Match(line);
+
             if (match.Success)
             {
                 Console.WriteLine($"{match.Groups["street"]} {match.Groups["house"]}");
@@ -75,18 +76,6 @@ public class Work4a : Work
             {
                 Console.WriteLine("Не найдено");
             }
-        }
-    }
-    public override void PrintFromConsole(string text)
-    {
-        Match match = Regex.Match(text);
-        if (match.Success)
-        {
-            Console.WriteLine($"{match.Groups["street"]} {match.Groups["house"]}");
-        }
-        else
-        {
-            Console.WriteLine("Не найдено");
         }
     }
 }
@@ -102,8 +91,11 @@ public class AddWork2 : Work
             if (match.Success)
             {
                 string prot = string.IsNullOrEmpty(match.Groups["prot"].Value) ? "http://" : match.Groups["prot"].Value;
-                Console.WriteLine($"{prot}www.{match.Groups["url"].Value}");
+                string newHref = $"{prot}www.{match.Groups["url"].Value}";
+                SaveHrefInFile($"New Hrefs {nameof(AddWork2)}.txt", newHref);
+                Console.WriteLine(newHref);
             }
         }
     }
+    private static void SaveHrefInFile(string filePath, string text) => File.AppendAllText(filePath, $"{text}\n");
 }
