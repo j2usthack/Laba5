@@ -58,6 +58,27 @@ public class Work3 : Work
     protected override string[] Lines => File.ReadAllLines($"!{nameof(Work3)}.txt");
     protected override Regex Regex => new(@".+@.+");
 }
+//public class Work4a : Work
+//{
+//    protected override string[] Lines => File.ReadAllLines($"!{nameof(Work4a)}.txt");
+//    protected override Regex Regex => new(@"^(ул\D\s)?(?<street>\S+)\s(д\D\s)?(?<house>\d{1,3}(\/\d{1,3})?)$");
+//    public override void PrintFromFile()
+//    {
+//        foreach (string line in Lines)
+//        {
+//            Match match = Regex.Match(line);
+
+//            if (match.Success)
+//            {
+//                Console.WriteLine($"{match.Groups["street"]} {match.Groups["house"]}");
+//            }
+//            else
+//            {
+//                Console.WriteLine("Не найдено");
+//            }
+//        }
+//    }
+//}
 public class Work4a : Work
 {
     protected override string[] Lines => File.ReadAllLines($"!{nameof(Work4a)}.txt");
@@ -67,7 +88,6 @@ public class Work4a : Work
         foreach (string line in Lines)
         {
             Match match = Regex.Match(line);
-
             if (match.Success)
             {
                 Console.WriteLine($"{match.Groups["street"]} {match.Groups["house"]}");
@@ -76,6 +96,18 @@ public class Work4a : Work
             {
                 Console.WriteLine("Не найдено");
             }
+        }
+    }
+    public override void PrintFromConsole(string text)
+    {
+        Match match = Regex.Match(text);
+        if (match.Success)
+        {
+            Console.WriteLine($"{match.Groups["street"]} {match.Groups["house"]}");
+        }
+        else
+        {
+            Console.WriteLine("Не найдено");
         }
     }
 }
@@ -97,5 +129,5 @@ public class AddWork2 : Work
             }
         }
     }
-    private static void SaveHrefInFile(string filePath, string text) => File.AppendAllText(filePath, $"{text}\n");
+    public static void SaveHrefInFile(string filePath, string text) => File.AppendAllText(filePath, $"{text}\n");
 }

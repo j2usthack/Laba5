@@ -7,12 +7,13 @@ public class Program
         //Work1 work1 = new();
         //work1.PrintFromFile();
 
-        Work work = new AddWork2();
-        //work.PrintFromConsole(Console.ReadLine());
+        //Work work = new AddWork2();
+        //work.PrintFromConsole(Console.ReadLine());       
 
         //work.PrintFromFile();
 
         Work4a work4a = new();
+        //work4a.PrintFromFile();
         work4a.PrintFromConsole(Console.ReadLine());
 
         //Work2 work2 = new();
