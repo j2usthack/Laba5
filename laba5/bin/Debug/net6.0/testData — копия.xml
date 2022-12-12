@@ -1,0 +1,18 @@
+<test>
+  <node1>someValue</node1>
+  <node2>someValue</node2>
+  <node3>someValue</node3>
+  <node4>someValue</node4>
+  <node5>some Value</node1>
+  <node1>someValue</node1>
+  <node3>someValue</nod3>
+  <node2>some Value</node1>
+  <node1>someValue</node1>  <creation_date>someValue</creation_date>
+  <node1>some value</node1>
+  <client_address>ул. Высоцкого д. 20/3</client_address>
+  <coordinate>Новосибирск: широта 60.5678, долгота 54.1234</coordinate>
+  <client_data>Иванов Иван Иванович, 20 лет, г. Новосибирск.</node1>	
+  <client_address>ул. Ленина д. 159</client_address>
+  <coordinate>Омск: 50.3826, 34.9034</coordinate>
+  <client_data>Сидоров Петр Петрович, 30 лет, г. Омск.</client_data>	
+</test>
