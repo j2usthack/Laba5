@@ -46,7 +46,7 @@ public abstract class Work
 public class Work1 : Work
 {
     protected override string[] Lines => File.ReadAllLines($"!{nameof(Work1)}.txt");
-    protected override Regex Regex => new(@"(a+\s?)+");
+    protected override Regex Regex => new(@"^((a\sa+\sa)|(a+))$");
 }
 public class Work2 : Work
 {
@@ -56,7 +56,7 @@ public class Work2 : Work
 public class Work3 : Work
 {
     protected override string[] Lines => File.ReadAllLines($"!{nameof(Work3)}.txt");
-    protected override Regex Regex => new(@".+@.+");
+    protected override Regex Regex => new(@"^(\w+\.)?\w+@(\w+\.){1,2}\w{1,4}$");
 }
 //public class Work4a : Work
 //{
@@ -82,7 +82,7 @@ public class Work3 : Work
 public class Work4a : Work
 {
     protected override string[] Lines => File.ReadAllLines($"!{nameof(Work4a)}.txt");
-    protected override Regex Regex => new(@"^(ул\D\s)?(?<street>\S+)\s(д\D\s)?(?<house>\d{1,3}(\/\d{1,3})?)$");
+    protected override Regex Regex => new(@"^(ул\.\s+)?(?<street>[а-яА-Я]+)\s+(д\.\s+)?(?<house>\d{1,3}(\/\d{1,3})?)$");
     public override void PrintFromFile()
     {
         foreach (string line in Lines)
@@ -114,7 +114,7 @@ public class Work4a : Work
 public class AddWork2 : Work
 {
     protected override string[] Lines => File.ReadAllLines($"!{nameof(AddWork2)}.txt");
-    protected override Regex Regex => new(@"^(?<prot>(https?|ftp):\/\/)?(www\.)?(?<url>([a-zA-Z0-9_]+\.?){2,5})$");
+    protected override Regex Regex => new(@"^(?<prot>(https?|ftp):\/\/)?(www\.)?(?<url>([a-zA-Z0-9]+\.?){2,5})$");
     public override void PrintFromFile()
     {
         foreach (var line in Lines)
